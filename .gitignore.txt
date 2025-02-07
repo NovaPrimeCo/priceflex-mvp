@@ -1,0 +1,10 @@
+# Ignore the virtual environment folder
+venv/
+
+# Common Python caches
+__pycache__/
+*.pyc
+
+# OS or environment specific clutter
+.DS_Store
+Thumbs.db
