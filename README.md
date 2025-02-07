@@ -24,4 +24,14 @@ This repository contains the early prototype (MVP) for the PriceFlex AI project,
 ## Contributing
 - This is a personal dev project. If you’re a tester or friend with feedback, feel free to open issues or pass notes.
 
+## Installation
+
+1. Clone the repository.
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # For Unix/macOS
+   venv\Scripts\activate     # For Windows
+
+
 -- End of README --
