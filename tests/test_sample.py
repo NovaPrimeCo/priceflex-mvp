@@ -1,12 +1,14 @@
-import sys
-sys.path.insert(0, '.')  # Ensures the root (.) is in sys.path
-
-from scraper import scrape_product  # Must match the exact file name "scraper.py"
+import pytest
+from scraper import scrape_product, scrape_competitor_price
 
 def test_scrape_product():
-    # Provide any URL or dummy string as needed; 
-    # your function can handle it or return a mock for now.
-    result = scrape_product("http://example.com/test-product")
-    assert isinstance(result, dict)
-    assert "name" in result
-    assert "price" in result
+    # Test that the synchronous scraping function returns the expected mock price.
+    url = "http://example.com/test-product"
+    price = scrape_product(url)
+    assert price == 80.00
+
+def test_scrape_competitor_price():
+    # Test the direct competitor price scraping function.
+    product_name = "dummy"
+    price = scrape_competitor_price(product_name)
+    assert price == 80.00
