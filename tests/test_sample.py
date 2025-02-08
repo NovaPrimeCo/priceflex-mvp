@@ -1,12 +1,11 @@
 import sys
-sys.path.insert(0, '.')  # Ensures the root (.) is in sys.path
+sys.path.insert(0, '.')  # Ensure root directory is accessible.
 
-from scraper import scrape_product  # Must match the exact file name "scraper.py"
+from scraper import scrape_product  # matches the file "scraper.py" exactly.
 
 def test_scrape_product():
-    # Provide any URL or dummy string as needed; 
-    # your function can handle it or return a mock for now.
-    result = scrape_product("http://example.com/test-product")
-    assert isinstance(result, dict)
-    assert "name" in result
-    assert "price" in result
+    # Basic test logic:
+    data = scrape_product("http://example.com/test-product")
+    assert isinstance(data, dict)
+    assert "name" in data
+    assert "price" in data
