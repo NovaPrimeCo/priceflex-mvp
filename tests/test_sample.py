@@ -1,11 +1,14 @@
-import sys
-sys.path.insert(0, '.')  # Ensure root directory is accessible.
-
-from scraper import scrape_product  # matches the file "scraper.py" exactly.
+import pytest
+from scraper import scrape_product, scrape_competitor_price
 
 def test_scrape_product():
-    # Basic test logic:
-    data = scrape_product("http://example.com/test-product")
-    assert isinstance(data, dict)
-    assert "name" in data
-    assert "price" in data
+    # Test that the synchronous scraping function returns the expected mock price.
+    url = "http://example.com/test-product"
+    price = scrape_product(url)
+    assert price == 80.00
+
+def test_scrape_competitor_price():
+    # Test the direct competitor price scraping function.
+    product_name = "dummy"
+    price = scrape_competitor_price(product_name)
+    assert price == 80.00
