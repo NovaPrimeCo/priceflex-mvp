@@ -9,9 +9,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: .
     strategy:
       matrix:
         python-version: [ "3.8", "3.9", "3.10", "3.11" ]
+    timeout-minutes: 20
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
